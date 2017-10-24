@@ -22,14 +22,14 @@
         android:layout_marginTop="143dp" />
 
     <Button
-        android:id="@+id/nextBtn"
+        android:id="@+id/playBtn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/helloTxt"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="133dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Next"
-        android:textAlignment="center" />
+        android:text="Play"
+        android:textAlignment="center"
+        android:layout_below="@+id/helloTxt"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
