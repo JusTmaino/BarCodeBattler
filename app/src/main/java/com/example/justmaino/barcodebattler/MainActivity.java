@@ -19,18 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
         helloTxt = (TextView)findViewById(R.id.helloTxt);
         playBtn = (Button)findViewById(R.id.playBtn);
+    }
 
-        playBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent battle = new Intent(MainActivity.this,BattleActivity.class);
-                startActivity(battle);
-            }
-        });
+    public void play(View view){
+
+        Intent battle = new Intent(MainActivity.this,BattleActivity.class);
+        startActivity(battle);
     }
 
 
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         System.out.println("requestCode : "+requestCode);
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             else {
                 helloTxt.setText("No");
             }
-    }
+    }*/
 
 
 }

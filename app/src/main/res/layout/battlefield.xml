@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg" >
 
     <ImageView
         android:id="@+id/player1"
@@ -56,7 +57,8 @@
         android:layout_alignBaseline="@+id/attackStat2"
         android:layout_alignBottom="@+id/attackStat2"
         android:layout_alignEnd="@+id/battleBtn1"
-        android:text="10000" />
+        android:text="10000"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/attackStat2"
@@ -65,7 +67,8 @@
         android:layout_alignEnd="@+id/battleBtn2"
         android:layout_below="@+id/battleBtn2"
         android:layout_marginTop="39dp"
-        android:text="8000" />
+        android:text="8000"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/defenseStat1"
@@ -74,16 +77,18 @@
         android:layout_alignStart="@+id/attackStat1"
         android:layout_below="@+id/attackStat1"
         android:layout_marginTop="25dp"
-        android:text="20000" />
+        android:text="20000"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/defenseStat2"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="25000"
         android:layout_alignBaseline="@+id/defenseStat1"
         android:layout_alignBottom="@+id/defenseStat1"
-        android:layout_alignStart="@+id/attackStat2" />
+        android:layout_alignStart="@+id/attackStat2"
+        android:text="25000"
+        android:textColor="@android:color/background_light" />
 
     <ImageView
         android:id="@+id/attackImg1"
@@ -91,7 +96,7 @@
         android:layout_height="30dp"
         android:layout_above="@+id/defenseStat1"
         android:layout_toStartOf="@+id/attackStat1"
-        android:background="@drawable/attackImg" />
+        android:background="@drawable/attackimg" />
 
     <ImageView
         android:id="@+id/defenseImg1"
@@ -99,7 +104,7 @@
         android:layout_height="30dp"
         android:layout_alignBottom="@+id/defenseStat1"
         android:layout_toStartOf="@+id/defenseStat1"
-        android:background="@drawable/defenseImg" />
+        android:background="@drawable/defenseimg" />
 
     <ImageView
         android:id="@+id/attackImg2"
@@ -107,7 +112,7 @@
         android:layout_height="30dp"
         android:layout_alignBottom="@+id/attackStat2"
         android:layout_toStartOf="@+id/attackStat2"
-        android:background="@drawable/attackImg" />
+        android:background="@drawable/attackimg" />
 
 
     <ImageView
@@ -116,6 +121,6 @@
         android:layout_height="30dp"
         android:layout_alignBottom="@+id/defenseStat2"
         android:layout_toStartOf="@+id/defenseStat2"
-        android:background="@drawable/defenseImg" />
+        android:background="@drawable/defenseimg" />
 
 </RelativeLayout>

@@ -9,4 +9,21 @@
         android:fromYDelta="0%p"
         android:toYDelta="-5%p"
         android:duration="600" />
+
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="10"
+        android:toYScale="0.0"
+        android:pivotX="20%"
+        android:pivotY="20%"
+        android:startOffset="700"
+        android:duration="100" />
+
+    <translate
+        android:fromXDelta="25%p"
+        android:toXDelta="30%p"
+        android:fromYDelta="-5%p"
+        android:toYDelta="-2%p"
+        android:duration="200" />
+
 </set>

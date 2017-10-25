@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg">
+
+    <TextView
+        android:id="@+id/gameOverTxt"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:text="TextView"
+        android:textColor="@android:color/background_light"
+        android:layout_marginBottom="61dp"
+        android:layout_above="@+id/restartBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/menuBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="157dp"
+        android:layout_marginStart="70dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="menu"
+        android:text="Menu"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/restartBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/menuBtn"
+        android:layout_alignBottom="@+id/menuBtn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="55dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="restartGame"
+        android:text="Restart"
+        android:textAlignment="center" />
+</RelativeLayout>

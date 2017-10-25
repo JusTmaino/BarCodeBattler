@@ -1,5 +1,6 @@
 package com.example.justmaino.barcodebattler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -62,6 +63,10 @@ public class BattleActivity extends AppCompatActivity {
         else{
             defenseStat2.setText("0");
             Toast.makeText(BattleActivity.this, "Game Over Player 2", Toast.LENGTH_LONG).show();
+            Intent gameOver = new Intent(BattleActivity.this,GameOverActivity.class);
+            gameOver.putExtra("winner","1");
+            startActivity(gameOver);
+            finish();
         }
 
     }
@@ -78,6 +83,10 @@ public class BattleActivity extends AppCompatActivity {
         else{
             defenseStat1.setText("0");
             Toast.makeText(BattleActivity.this, "Game Over Player 1", Toast.LENGTH_LONG).show();
+            Intent gameOver = new Intent(BattleActivity.this,GameOverActivity.class);
+            gameOver.putExtra("winner","2");
+            startActivity(gameOver);
+            finish();
         }
 
     }
