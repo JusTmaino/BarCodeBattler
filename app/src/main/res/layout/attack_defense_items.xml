@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg" >
+
+
+    <Button
+        android:id="@+id/scanDefenseItem"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/scanAttackItem"
+        android:layout_below="@+id/scanAttackItem"
+        android:layout_marginTop="105dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="scanDefenseItems"
+        android:text="Scan Defense Items"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/scanAttackItem"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="142dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="scanAttackItems"
+        android:text="Scan attack Items"
+        android:textAlignment="center" />
+</RelativeLayout>

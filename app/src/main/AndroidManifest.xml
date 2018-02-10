@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.justmaino.barcodebattler">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus" />
+
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="barcode" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +32,36 @@
 
         <activity
             android:name=".GameOverActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ScanBarCodeActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".MonsterCollectionActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".MonsterDetailsActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".AttackItemsActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".DefenseItemsActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ScanAttackDefenseItemsActivity"
             android:label="@string/app_name">
         </activity>
 

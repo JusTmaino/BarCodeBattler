@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg">
+
+
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/deleteBtn"
+        android:layout_alignEnd="@+id/defenseItemValue"
+        android:layout_alignTop="@+id/deleteBtn"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="scan"
+        android:text="Scan Again"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/defenseImg"
+        android:layout_below="@+id/defenseImg"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="49dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="delete"
+        android:text="Delete"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/defenseItemName"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/defenseItemIMG"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Item Name"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/defenseImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/defenseItemValue"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/defenseItemValue"
+        android:background="@drawable/defenseimg" />
+
+    <TextView
+        android:id="@+id/defenseItemValue"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/defenseItemName"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="27dp"
+        android:text="5000"
+        android:textColor="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/defenseItemIMG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
+
+</RelativeLayout>

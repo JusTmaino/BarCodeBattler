@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class GameOverActivity extends AppCompatActivity {
 
     TextView gameOverTxt;
-    Button restartBtn;
+    String monsterName = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +27,14 @@ public class GameOverActivity extends AppCompatActivity {
 
 
         gameOverTxt = (TextView)findViewById(R.id.gameOverTxt);
-        restartBtn = (Button)findViewById(R.id.restartBtn);
         if(getIntent().getExtras().getString("winner")!= null){
             gameOverTxt.setText("Winner is player "+getIntent().getExtras().getString("winner"));
         }
         else {
             gameOverTxt.setText("Sry an Error happened");
+        }
+        if(getIntent().getStringExtra("monsterName")!= null){
+            monsterName = getIntent().getStringExtra("monsterName");
         }
 
 
@@ -41,6 +43,9 @@ public class GameOverActivity extends AppCompatActivity {
     public void restartGame(View view){
 
         Intent game = new Intent(GameOverActivity.this,BattleActivity.class);
+        if (monsterName != null) {
+            game.putExtra("monsterName", monsterName);
+        }
         startActivity(game);
         finish();
 

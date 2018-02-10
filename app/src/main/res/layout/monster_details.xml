@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimg">
+
+
+    <Button
+        android:id="@+id/playBattleBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/deleteBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="play"
+        android:text="Use On Battle"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/playBattleBtn"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/playBattleBtn"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="scan"
+        android:text="ADD Items"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/defenseImg"
+        android:layout_marginTop="33dp"
+        android:layout_toStartOf="@+id/monsterDefenseStat"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="delete"
+        android:text="Delete"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/monsterName"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/monsterIMG"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Monster Name"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/defenseImg"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/attackImg"
+        android:layout_alignTop="@+id/monsterDefenseStat"
+        android:background="@drawable/defenseimg" />
+
+    <TextView
+        android:id="@+id/monsterDefenseStat"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/monsterAttackStat"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/attackImg"
+        android:text="25000"
+        android:textColor="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/attackImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/monsterIMG"
+        android:layout_alignTop="@+id/monsterAttackStat"
+        android:background="@drawable/attackimg" />
+
+    <TextView
+        android:id="@+id/monsterAttackStat"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/monsterName"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/defenseImg"
+        android:text="10000"
+        android:textColor="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/monsterIMG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
+
+    <ImageView
+        android:id="@+id/attackItem"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/monsterName"
+        android:layout_alignTop="@+id/monsterAttackStat"
+        app:srcCompat="@drawable/attack3" />
+
+    <ImageView
+        android:id="@+id/defenseItem"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/monsterDefenseStat"
+        android:layout_alignStart="@+id/attackItem"
+        app:srcCompat="@drawable/shield5" />
+
+    <TextView
+        android:id="@+id/attackItemValueTxt"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/scanBtn"
+        android:layout_alignTop="@+id/attackItem"
+        android:text="0"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/defenseItemValueTxt"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/attackItemValueTxt"
+        android:layout_alignTop="@+id/defenseItem"
+        android:text="0"
+        android:textColor="@android:color/background_light" />
+
+</RelativeLayout>

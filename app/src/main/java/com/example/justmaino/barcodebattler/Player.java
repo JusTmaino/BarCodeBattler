@@ -1,32 +1,34 @@
 package com.example.justmaino.barcodebattler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by justmaino on 24/10/2017.
+ * Created by justmaino on 07/02/2018.
  */
 
 public class Player {
+    public String name;
+    public ArrayList<Monster> monsterList;
 
-    int attack;
-    int defense;
-
-    public Player(int attack,int defense){
-        this.attack=attack;
-        this.defense=defense;
+    public Player(String name){
+        this.name = name;
+        monsterList = new ArrayList<Monster>();
     }
 
-    public int getAttack(){
-        return this.attack;
+    public String getName() {
+        return name;
     }
 
-    public int getDefense(){
-        return this.defense;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAttack(int attack){
-        this.attack = attack;
+    public ArrayList<Monster> getMonsterList() {
+        return monsterList;
     }
 
-    public void setDefense(int defense){
-        this.defense=defense;
+    public void setMonsterList(ArrayList<Monster> monsterList) {
+        this.monsterList = monsterList;
     }
 }
