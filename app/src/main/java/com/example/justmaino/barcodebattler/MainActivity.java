@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playLocal(View view){
 
-        Intent battle = new Intent(MainActivity.this,BattleActivity.class);
+        Intent battle = new Intent(MainActivity.this,MonsterCollectionActivity.class);
         startActivity(battle);
     }
 

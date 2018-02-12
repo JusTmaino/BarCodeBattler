@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.animation.Animation;
@@ -88,8 +89,12 @@ public class BattleActivity extends AppCompatActivity {
     public void startBattlePlayer1(View view){
 
         if(player1Turn) {
-            Animation animationAttack = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation_attack1);
-            imagePlayer1.startAnimation(animationAttack);
+            //Animation animationAttack = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation_attack1);
+            TranslateAnimation translateAnimation = new TranslateAnimation(0,700,0,-60);
+            translateAnimation.setDuration(400);
+            translateAnimation.setFillAfter(false);
+
+            imagePlayer1.startAnimation(translateAnimation);
             if (monster2.getDefense() > monster1.getAttack()) {
 
                 monster2.setDefense(monster2.getDefense() - monster1.getAttack());
@@ -117,8 +122,12 @@ public class BattleActivity extends AppCompatActivity {
     public void startBattlePlayer2(View view){
 
         if(player2Turn) {
-            Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation_attack2);
-            imagePlayer2.startAnimation(animation1);
+            //Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation_attack2);
+            TranslateAnimation translateAnimation = new TranslateAnimation(0,-700,0,-60);
+            translateAnimation.setDuration(400);
+            translateAnimation.setFillAfter(false);
+
+            imagePlayer2.startAnimation(translateAnimation);
             if (monster1.getDefense() > monster2.getAttack()) {
 
                 monster1.setDefense(monster1.getDefense() - monster2.getAttack());
