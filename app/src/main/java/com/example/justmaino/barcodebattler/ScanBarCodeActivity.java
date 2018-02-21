@@ -103,11 +103,22 @@ public class ScanBarCodeActivity extends AppCompatActivity implements ZXingScann
     @Override
     public void handleResult(Result result) {
         int value = -1;
-        Long code = Long.parseLong(result.getText().toString());
+        Long code = Long.valueOf(0);
+        try {
+            code = Long.parseLong(result.getText().toString());
+        }
+        catch (Exception e){
+            //Toast.makeText(ScanBarCodeActivity.this, "Plz Scan Bar Codes that contains Numbers Only", Toast.LENGTH_LONG).show();
+        }
         Log.d("TAG", "SCAN: Monster "+scanType);
         if(scanType.equals("monster")){
-            value = (int) (code % 30);
-            boolean inserted = cn.insertData("Monster " + value, "monster" + value,value*1000,value*2000,null,null);
+            if (code != 0) {
+                value = (int) (code % 30);
+            }
+            else {
+                value = 3;
+            }
+            boolean inserted = cn.insertData("Monster " + value, "monster" + value,value*1700,value*1000,value*2000,null,null);
             if (inserted) {
                 Log.d("TAG", "SCAN: Monster " + value + " created");
                 Intent collection = new Intent(ScanBarCodeActivity.this,MonsterCollectionActivity.class);
@@ -117,7 +128,12 @@ public class ScanBarCodeActivity extends AppCompatActivity implements ZXingScann
             }
         }
         else if(scanType.equals("attackItems")){
-            value = (int) (code % 6);
+            if (code != 0) {
+                value = (int) (code % 6);
+            }
+            else {
+                value = 3;
+            }
             boolean inserted = cn.insertAttackItemsData("Attack Item " + value, "attack" + value,value*1000);
             if (inserted) {
                 Log.d("TAG", "SCAN: Attack Item " + value + " created");
@@ -132,7 +148,12 @@ public class ScanBarCodeActivity extends AppCompatActivity implements ZXingScann
 
         }
         else if(scanType.equals("defenseItems")){
-            value = (int) (code % 6);
+            if (code != 0) {
+                value = (int) (code % 6);
+            }
+            else {
+                value = 3;
+            }
             boolean inserted = cn.insertDefenseItemsData("Defense Item " + value, "shield" + value,value*2000);
             if (inserted) {
                 Log.d("TAG", "SCAN: Defense Item " + value + " created");

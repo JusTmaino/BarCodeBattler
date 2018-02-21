@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
         Intent battle = new Intent(MainActivity.this,MonsterCollectionActivity.class);
         startActivity(battle);
+    }
+
+    public void playNetwork(View view){
+
+        Toast.makeText(MainActivity.this, "Sry ,Network battle is not supported in this version ", Toast.LENGTH_LONG).show();
+
+        //Intent battle = new Intent(MainActivity.this,MonsterCollectionActivity.class);
+        //startActivity(battle);
     }
 
 

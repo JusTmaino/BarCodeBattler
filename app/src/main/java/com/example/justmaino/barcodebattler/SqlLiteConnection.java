@@ -27,6 +27,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
     public static final String id = "ID";
     public static final String monsterName = "NAME";
     public static final String picture = "PICTURE";
+    public static final String life = "LIFE";
     public static final String attack = "ATTACK";
     public static final String defense = "DEFENSE";
     public static final String attackItemNam = "ATTACKITEMNAME";
@@ -58,7 +59,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE "+TABLE_PLAYER+" ("+idPlayer+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ playerName +" TEXT)");
-        db.execSQL("CREATE TABLE "+TABLE_MONSTER+" ("+id+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ monsterName +" TEXT,"+picture+" TEXT,"+attack+" INTEGER,"+defense+" INTEGER,"+attackItemNam+" TEXT,"+defenseItemNam+" TEXT)");
+        db.execSQL("CREATE TABLE "+TABLE_MONSTER+" ("+id+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ monsterName +" TEXT,"+picture+" TEXT,"+life+" INTEGER,"+attack+" INTEGER,"+defense+" INTEGER,"+attackItemNam+" TEXT,"+defenseItemNam+" TEXT)");
         db.execSQL("CREATE TABLE "+TABLE_PLAYER_MONSTER+" ("+idPlayerMonster+" INTEGER PRIMARY KEY AUTOINCREMENT,"+playerID+" INTEGER,"+monsterID+" INTEGER,  FOREIGN KEY ("+playerID+") REFERENCES "+TABLE_PLAYER+"("+idPlayer+") ,FOREIGN KEY ("+monsterID+") REFERENCES "+TABLE_MONSTER+"("+id+"))");
         db.execSQL("CREATE TABLE "+TABLE_ATTACK_ITEMS+" ("+idAttackItem+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ attackItemName +" TEXT,"+attackItemPicture+" TEXT,"+attackItemValue+" INTEGER)");
         db.execSQL("CREATE TABLE "+TABLE_DEFENSE_ITEMS+" ("+idDefenseItem+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ defenseItemName +" TEXT,"+defenseItemPicture+" TEXT,"+defenseItemValue+" INTEGER)");
@@ -74,12 +75,13 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name1 ,String picture1, int attack1, int defense1, String attackItemNam1, String defenseItemNam1)
+    public boolean insertData(String name1 ,String picture1,int life1, int attack1, int defense1, String attackItemNam1, String defenseItemNam1)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentVal = new ContentValues();
         contentVal.put(monsterName, name1);
         contentVal.put(picture , picture1);
+        contentVal.put(life , life1);
         contentVal.put(attack , attack1);
         contentVal.put(defense , defense1);
         contentVal.put(attackItemNam , attackItemNam1);
@@ -146,7 +148,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
         Log.i(TAG, "getMonsters: in ");
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(SqlLiteConnection.TABLE_MONSTER,
-                new String[]{   SqlLiteConnection.monsterName, SqlLiteConnection.picture,SqlLiteConnection.attack,
+                new String[]{   SqlLiteConnection.monsterName, SqlLiteConnection.picture,SqlLiteConnection.life,SqlLiteConnection.attack,
                         SqlLiteConnection.defense,SqlLiteConnection.attackItemNam,SqlLiteConnection.defenseItemNam},
                 null, null, null, null, null);
 
@@ -157,6 +159,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
                 Monster monster = new Monster();
                 monster.setName(cursor.getString(cursor.getColumnIndex(monsterName)));
                 monster.setPicture(cursor.getString(cursor.getColumnIndex(picture)));
+                monster.setAttack(Integer.parseInt(cursor.getString(cursor.getColumnIndex(life))));
                 monster.setAttack(Integer.parseInt(cursor.getString(cursor.getColumnIndex(attack))));
                 monster.setDefense(Integer.parseInt(cursor.getString(cursor.getColumnIndex(defense))));
                 monster.setAttackItemName(cursor.getString(cursor.getColumnIndex(attackItemNam)));
@@ -242,7 +245,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
         Monster monster = new Monster();
         String name="";
         Cursor cursor = db.query(    SqlLiteConnection.TABLE_MONSTER,
-                new String[]{   SqlLiteConnection.monsterName, SqlLiteConnection.picture,SqlLiteConnection.attack,
+                new String[]{   SqlLiteConnection.monsterName, SqlLiteConnection.picture,SqlLiteConnection.life ,SqlLiteConnection.attack,
                         SqlLiteConnection.defense,SqlLiteConnection.attackItemNam,SqlLiteConnection.defenseItemNam},
                 SqlLiteConnection.id + " = ?",
                 new String[] { id1 },
@@ -252,6 +255,7 @@ public final class SqlLiteConnection extends SQLiteOpenHelper {
             cursor.moveToFirst();
             monster.setName(cursor.getString(cursor.getColumnIndex(monsterName)));
             monster.setPicture(cursor.getString(cursor.getColumnIndex(picture)));
+            monster.setLife(Integer.parseInt(cursor.getString(cursor.getColumnIndex(life))));
             monster.setAttack(Integer.parseInt(cursor.getString(cursor.getColumnIndex(attack))));
             monster.setDefense(Integer.parseInt(cursor.getString(cursor.getColumnIndex(defense))));
             monster.setAttackItemName(cursor.getString(cursor.getColumnIndex(attackItemNam)));

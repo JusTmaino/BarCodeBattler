@@ -31,9 +31,9 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="70dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Battle"
-        android:textAlignment="center"
-        android:onClick="startBattlePlayer1" />
+        android:onClick="startBattlePlayer1"
+        android:text="Attack"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/battleBtn2"
@@ -44,9 +44,9 @@
         android:layout_alignStart="@+id/player2"
         android:layout_marginStart="18dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Battle"
-        android:textAlignment="center"
-        android:onClick="startBattlePlayer2" />
+        android:onClick="startBattlePlayer2"
+        android:text="Attack"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/attackStat1"
@@ -151,5 +151,32 @@
         android:layout_height="40dp"
         android:layout_alignStart="@+id/battleBtn1"
         android:layout_alignTop="@+id/attackItem1" />
+
+    <ProgressBar
+        android:id="@+id/progressBarMonster1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/attackStat1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarMonster2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progressBarMonster1"
+        android:layout_alignEnd="@+id/player2"
+        android:layout_alignStart="@+id/player2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/progressBarMonster1"
+        android:layout_centerHorizontal="true"
+        android:text="VS"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>

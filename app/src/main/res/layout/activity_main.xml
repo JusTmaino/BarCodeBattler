@@ -51,6 +51,7 @@
         android:layout_marginTop="67dp"
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_blue_dark"
+        android:onClick="playNetwork"
         android:text="Play on Network"
         android:textAlignment="center" />
 

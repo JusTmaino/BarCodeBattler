@@ -8,6 +8,7 @@ public class Monster {
 
     String name;
     String picture;
+    int life;
     int attack;
     int defense;
     String attackItemName;
@@ -15,9 +16,10 @@ public class Monster {
 
     public Monster(){}
 
-    public Monster(String name ,String picture, int attack,int defense, String attackItemName ,String defenseItemName){
+    public Monster(String name ,String picture,int life, int attack,int defense, String attackItemName ,String defenseItemName){
         this.name=name;
         this.picture=picture;
+        this.life=life;
         this.attack=attack;
         this.defense=defense;
         this.attackItemName=attackItemName;
@@ -70,5 +72,13 @@ public class Monster {
 
     public void setDefenseItemName(String defenseItemName) {
         this.defenseItemName = defenseItemName;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
     }
 }
